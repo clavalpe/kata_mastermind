@@ -9,3 +9,11 @@ class TestMastermind:
         evaluation = codemaker.evaluate(guess)
 
         assert [4, 0] == evaluation
+    
+    def test_codebreaker_does_not_hit_any_position(self):
+        codemaker = Codemaker(["red", "red", "red", "red"])
+        guess = ["blue", "blue", "blue", "blue"]
+
+        evaluation = codemaker.evaluate(guess)
+
+        assert [0, 0] == evaluation
